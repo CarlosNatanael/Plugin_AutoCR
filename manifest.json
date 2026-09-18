@@ -2,14 +2,14 @@
   "manifest_version": 3,
   "name": "AutoCR Redirector",
   "version": "1.0",
-  "description": "Redireciona a ID do jogo do RetroAchievements para o AutoCR",
+  "description": "Adiciona um botão flutuante nas páginas de jogos do RetroAchievements para abrir no AutoCR",
   "permissions": [
     "activeTab"
   ],
-  "action": {
-    "default_title": "Abrir no AutoCR"
-  },
-  "background": {
-    "service_worker": "service-worker.js"
-  }
+  "content_scripts": [
+    {
+      "matches": ["https://retroachievements.org/game/*"],
+      "js": ["content.js"]
+    }
+  ]
 }
